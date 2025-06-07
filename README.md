@@ -1,7 +1,7 @@
 # lsdb-registration-form-api
 This is a simple PHP API backend for registering and retrieving users
 
-The best way to run this project easily it use Docker, and the project was tested with Docker Version 4.41.2
+The best way to run this project easily is to use Docker, and the project was tested with Docker Version 4.41.2
 
 On the terminal run the following command to start and stop the project respectfully.
 
