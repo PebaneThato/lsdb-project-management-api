@@ -10,14 +10,14 @@ if (!$data) {
     exit;
 }
 
-$firstName = $data['first_name'] ?? '';
-$lastName = $data['last_name'] ?? '';
-$email = $data['email_address'] ?? '';
+$firstName = $data['firstName'] ?? '';
+$lastName = $data['lastName'] ?? '';
+$email = $data['emailAddress'] ?? '';
 $password = password_hash($data['password'] ?? '', PASSWORD_DEFAULT);
-$contact = $data['contact_number'] ?? '';
-$role = $data['user_role'] ?? '';
+$contact = $data['contactNumber'] ?? '';
+$role = $data['userRole'] ?? '';
 
-if (!$firstName || !$lastName || !$email || !$password) {
+if (!$firstName || !$lastName || !$email || !$contact || !$role) {
     echo json_encode(["error" => "Required fields are missing."]);
     http_response_code(400);
     exit;
