@@ -91,7 +91,7 @@ switch ($method) {
             respond(400, "No fields to update");
         }
 
-        $sql = "UPDATE project SET " . implode(', ', $fields) . " WHERE id = ?";
+        $sql = "UPDATE project SET " . implode(', ', $fields) . " WHERE project_id = ?";
         $types .= 'i';
         $params[] = $projectId;
 
