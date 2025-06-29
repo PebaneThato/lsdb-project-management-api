@@ -4,6 +4,7 @@ header(header: "Content-Type: application/json");
 include 'db.php';
 
 class User {
+    public int $id;
     public string $firstName;
     public string $lastName;
     public string $emailAddress;
@@ -18,6 +19,7 @@ $users = [];
 
 while ($row = $result->fetch_assoc()) {
     $user = new User();
+    $user->id = $row['id'];
     $user->firstName = $row['first_name'];
     $user->lastName = $row['last_name'];
     $user->emailAddress = $row['email_address'];
