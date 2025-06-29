@@ -32,7 +32,7 @@ switch ($method) {
         $contact = $data['contactNumber'];
         $role = $data['userRole'];
 
-        $sql = "INSERT INTO user_registration (first_name, last_name, email_address, password, contact_number, user_role)
+        $sql = "INSERT INTO user (first_name, last_name, email_address, password, contact_number, user_role)
                 VALUES (?, ?, ?, ?, ?, ?)";
         $stmt = $conn->prepare($sql);
         if ($stmt === false) {
@@ -82,7 +82,7 @@ switch ($method) {
             respond("No fields to update.", 400);
         }
 
-        $sql = "UPDATE user_registration SET " . implode(", ", $updates) . " WHERE id = ?";
+        $sql = "UPDATE user SET " . implode(", ", $updates) . " WHERE id = ?";
         $params[] = $id;
         $types .= "i";
 

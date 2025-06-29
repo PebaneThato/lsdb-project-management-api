@@ -14,7 +14,7 @@ class User
 }
 
 function fetchUsers(mysqli $conn, ?int $id = null): array|User|null {
-    $sql = "SELECT id, first_name, last_name, email_address, contact_number, user_role FROM user_registration";
+    $sql = "SELECT id, first_name, last_name, email_address, contact_number, user_role FROM user";
     
     if ($id !== null) {
         $sql .= " WHERE id = ? LIMIT 1";
