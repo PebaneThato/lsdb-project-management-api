@@ -1,6 +1,6 @@
 <?php
 header("Content-Type: application/json");
-require_once 'db.php'; // mysqli connection in $conn
+require_once 'db.php';
 
 $method = $_SERVER['REQUEST_METHOD'];
 
