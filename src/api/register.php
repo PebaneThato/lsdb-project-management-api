@@ -61,7 +61,7 @@ switch ($method) {
         $types = "";
 
         foreach ($fields as $field) {
-            if (isset($data[$field])) {
+            if (isset($data[$field]) && !empty($data[$field])) {
                 $dbField = match ($field) {
                     'firstName' => 'first_name',
                     'lastName' => 'last_name',
