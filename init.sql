@@ -27,3 +27,33 @@ CREATE TABLE IF NOT EXISTS project (
         ON UPDATE CASCADE
 );
 
+CREATE TABLE IF NOT EXISTS task (
+    tm_task_id INT AUTO_INCREMENT PRIMARY KEY,
+    tm_task_title VARCHAR(255) NOT NULL,
+    tm_task_description TEXT,
+    tm_task_type VARCHAR(255) NOT NULL,
+    tm_task_priority VARCHAR(255) NOT NULL,
+    tm_task_status VARCHAR(255) NOT NULL,
+    tm_task_start_date DATE,
+    tm_task_end_date DATE,
+    tm_task_creation_date DATE,
+    tm_task_creation_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    tm_task_created_by_id INT,
+    tm_task_created_by_name VARCHAR(255) NOT NULL,
+    tm_task_assigned_to_id INT,
+    tm_task_assigned_to_name VARCHAR(255) NOT NULL,
+    tm_task_project_id INT,
+    tm_task_project_name VARCHAR(255) NOT NULL,
+    tm_document VARCHAR(255) NOT NULL,
+
+    FOREIGN KEY (tm_task_created_by_id)
+        REFERENCES user(id) ON DELETE SET NULL ON UPDATE CASCADE,
+
+    FOREIGN KEY (tm_task_assigned_to_id)
+        REFERENCES user(id) ON DELETE SET NULL ON UPDATE CASCADE,
+
+    FOREIGN KEY (tm_task_project_id)
+        REFERENCES project(project_id) ON DELETE SET NULL ON UPDATE CASCADE
+);
+
+
