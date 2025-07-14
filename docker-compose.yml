@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   php:
     build: .
@@ -7,8 +5,14 @@ services:
       - "8000:80"
     volumes:
       - ./src:/var/www/html
+      - uploads:/app/uploads
     depends_on:
       - mysql
+    environment:
+      APACHE_RUN_USER: www-data
+      APACHE_RUN_GROUP: www-data
+    command: >
+      bash -c "chown -R www-data:www-data /app/uploads && apache2-foreground"
 
   mysql:
     image: mysql:8.0
@@ -24,3 +28,4 @@ services:
 
 volumes:
   db_data:
+  uploads:
