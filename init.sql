@@ -55,7 +55,7 @@ CREATE TABLE IF NOT EXISTS task (
         REFERENCES project(project_id) ON DELETE SET NULL ON UPDATE CASCADE
 );
 
-CREATE TABLE IF NOT EXISTS comments (
+CREATE TABLE IF NOT EXISTS comment (
     comment_id INT AUTO_INCREMENT PRIMARY KEY,
     comment_content TEXT NOT NULL,
     comment_added_by_id INT NOT NULL,
