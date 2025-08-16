@@ -66,5 +66,3 @@ CREATE TABLE IF NOT EXISTS comment (
     FOREIGN KEY (comment_added_by_id) REFERENCES user(id),
     FOREIGN KEY (task_id) REFERENCES task(tm_task_id)
 );
-
-
