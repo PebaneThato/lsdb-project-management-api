@@ -88,7 +88,7 @@ try {
             'commentAddedById' => $row['comment_added_by_id'],
             'commentAddedByName' => $row['comment_added_by_name'],
             'taskId' => $row['task_id'],
-            'commentDatetime' => $row['comment_datetime']
+            'commentDateTime' => $row['comment_datetime']
         ];
     }
     
