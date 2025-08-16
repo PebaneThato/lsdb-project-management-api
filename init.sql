@@ -55,4 +55,16 @@ CREATE TABLE IF NOT EXISTS task (
         REFERENCES project(project_id) ON DELETE SET NULL ON UPDATE CASCADE
 );
 
+CREATE TABLE IF NOT EXISTS comments (
+    comment_id INT AUTO_INCREMENT PRIMARY KEY,
+    comment_content TEXT NOT NULL,
+    comment_added_by_id INT NOT NULL,
+    comment_added_by_name VARCHAR(255) NOT NULL,
+    task_id INT NOT NULL,
+    comment_datetime DATETIME NOT NULL,
+
+    FOREIGN KEY (comment_added_by_id) REFERENCES user(id),
+    FOREIGN KEY (task_id) REFERENCES task(tm_task_id)
+);
+
 
